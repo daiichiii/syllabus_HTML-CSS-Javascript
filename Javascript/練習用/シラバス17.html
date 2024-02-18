@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highligthted{
+            outline: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="highlight" tabindex="0" onfocus="onhigligth()" onblur="removehightligth()">タブキーでフォーカスを当ててみてください</div>
+    <script>
+        const highlight = document.getElementById("highlight");
+
+        function onhigligth(){
+            highlight.classList.add("highligthted");
+        }
+        function removehightligth(){
+            highlight.classList.remove("highligthted");
+        }
+    </script>
+
+</body>
+</html>

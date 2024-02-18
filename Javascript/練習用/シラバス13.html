@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #stylechange{
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <input type="range" min="0" max="1" step="0.01" value="1" oninput="changeOpacity(this.value)">
+    <div id = "stylechange"></div>
+
+    <script>
+        function changeOpacity(value){
+            const stylechange = document.getElementById("stylechange");
+            stylechange.style.opacity = value;
+        }
+    </script>
+</body>
+</html>

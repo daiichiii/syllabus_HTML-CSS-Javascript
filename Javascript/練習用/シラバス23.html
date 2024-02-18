@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="playButton" onmouseenter="playAudio()" onmouseleave="pauseAudio()">マウスを乗せてみて</div> 
+
+    <audio id="audioContainer" src="「頑張ったね」.mp3"></audio>
+
+    <script>
+        function playAudio(){
+            const audio = document.getElementById("audioContainer");
+            audio.play();
+        }
+
+        function pauseAudio(){
+            const audio = document.getElementById("audioContainer");
+            audio.pause();
+        }
+    </script>
+</body>
+</html>

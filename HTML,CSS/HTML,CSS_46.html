@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヘッダーとフッターのデザイン</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* ページ全体を画面いっぱいに広げる */
+    }
+
+    /* ヘッダースタイル */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      width: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* コンテンツエリアのスタイル */
+    main {
+      flex: 1; /* コンテンツエリアが残りの高さを占めるようにする */
+      padding: 20px;
+    }
+
+    /* フッタースタイル */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <img src="MARVEL画像\ANT-MAN.jpg" alt="ロゴの画像">
+    <nav>
+      <a href="#">ホーム</a>
+      <a href="#">サービス</a>
+      <a href="#">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <!-- コンテンツエリア -->
+  <main>
+    <!-- ここにページのコンテンツを配置 -->
+    <h2>ここにメインコンテンツが入ります</h2>
+    <p>コンテンツがここに入ります。</p>
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <div>
+      &copy; 2023 会社名. All rights reserved.
+    </div>
+    <div class="social-links">
+      <a href="#" target="_blank">Facebook</a>
+      <a href="#" target="_blank">Twitter</a>
+      <a href="#" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+</body>
+</html>

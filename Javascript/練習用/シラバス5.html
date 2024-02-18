@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="image" src="ANT-MAN.jpg" alt="アントマン">
+
+    <script>
+        let image = document.getElementById("image");
+
+        image.addEventListener("wheel",function(){
+            let delta = event.deltaY;
+            let currentWidth = image.width;
+            let currentHeight = image.height;
+            let zoomFactor = 1.1
+
+            if(delta<0){
+                image.width = currentWidth*zoomFactor;
+                image.height = currentHeight*zoomFactor;
+            }else{
+                image.width = currentWidth/zoomFactor;
+                image.height = currentHeight/zoomFactor;
+            }
+        })
+    </script>
+</body>
+</html>

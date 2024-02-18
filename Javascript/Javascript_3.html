@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テキストボックスの内容表示</title>
+</head>
+<body>
+  <input type="text" id="textBox" placeholder="ここにテキストを入力してください">
+
+  <p id="outputParagraph">ここに入力したテキストが表示されます。</p>
+
+<script>
+  var textBox = document.getElementById("textBox");
+  var outputParagraph = document.getElementById("outputParagraph");
+
+  textBox.addEventListener("input",function(){
+    outputParagraph.textContent = textBox.value;
+  });
+</script>
+</body>
+</html>

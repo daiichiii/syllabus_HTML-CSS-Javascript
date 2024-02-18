@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブログカード</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .blog-card {
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .blog-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 20px;
+    }
+
+    .blog-card h3 {
+      margin-top: 0;
+    }
+
+    .blog-card p {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="blog-card">
+    <img src="https://placekitten.com/300/200" alt="Blog Image">
+    <div class="blog-card-content">
+      <h3>猫について</h3>
+      <p>猫は野生時代の性質を色濃く残しているため、身体はとても小さいですが、ライオンやトラ、チーター、ピューマといった大型ネコ科動物たちの身体能力や習性をそのまま小型化したような動物だといえます。
+
+        餌を人間に依存しているため自律する必要がなく、いつまでも子猫の気分が抜けない面はありますが、身体能力も五感の精度も狩猟本能も、まさに野生そのものだといえるのです。
+        
+        いわば、人間の横で眠る小さなワイルドキャットです。
+        
+        そんな猫達に、人間の社会の中で生きていくための術を教えるのは飼い主の役目です。
+        
+        猫達の生態、習性、本能、能力などを理解し、上手に人間社会の中で暮らしていけるようにすることで、災害時や飼い主の不幸などといった万が一の際にも、猫達自身を守るための能力を与えることができるのです。</p>
+    </div>
+  </div>
+
+</body>
+</html>

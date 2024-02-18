@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+            margin-top: 0;
+            position: fixed;
+            background-color: #333;
+            width: 100%;
+            top: 0;
+            height: 100px;
+        }
+        section{
+            margin-top: 150px;
+            height: 1500px;
+            padding: 20px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <header id="nav">
+        <h1>ナビゲーションを表示</h1>
+    </header>
+
+    <section>
+    </section>
+
+    <script>
+            const nav = document.getElementById("nav");
+
+            window.addEventListener("scroll",function(){
+                const scrollPosition = window.scrollY;
+
+                if(scrollPosition > 100){
+                    nav.style.backgroundColor = "red";
+                }else{
+                    nav.style.backgroundColor = "#333";
+                }
+            });
+    </script>
+</body>
+</html>

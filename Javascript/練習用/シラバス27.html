@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #follower{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: aqua;
+            position: absolute;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="follower"></div>
+
+    <script>
+        const follower = document.getElementById("follower");
+
+        document.addEventListener("mousemove",function(event){
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            follower.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+        });
+    </script>
+</body>
+</html>

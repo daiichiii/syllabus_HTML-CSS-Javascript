@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トップへ戻るボタン</title>
+  <style>
+    .section{
+        font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 200vh; /* ボタンが表示されるか確認するための高さを追加 */
+    }
+
+    #scrollBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ページのコンテンツ -->
+  <section>
+    <img src="106888130.jpg" alt="あなたの写真">
+    <h2>趣味</h2>
+    <p>私の趣味はワンピースです</p>
+  </section>
+  <button id="scrollBtn" onclick="scrollToTop()">トップへ戻る</button>
+
+  <script>
+    // 画面をスクロールするとボタンの表示・非表示を切り替える
+    window.onscroll = function() {
+      showScrollButton();
+    };
+
+    function showScrollButton() {
+      const scrollBtn = document.getElementById('scrollBtn');
+      if (document.body.scrollTop > document.documentElement.clientHeight / 2 ||
+          document.documentElement.scrollTop > document.documentElement.clientHeight / 2) {
+        scrollBtn.style.display = 'block';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    }
+
+    // ボタンをクリックしてトップへスクロール
+    function scrollToTop() {
+      document.body.scrollTop = 0; // Safari
+      document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
+    }
+  </script>
+</body>
+</html>

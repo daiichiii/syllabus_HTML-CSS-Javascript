@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ドロップダウンメニュー</title>
+  <style>
+    /* メニューのスタイル */
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .menu-item {
+      position: relative;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    /* サブメニューのスタイル */
+    .sub-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #f1f1f1;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-item:hover .sub-menu {
+      display: block;
+    }
+
+    .sub-menu-item {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="menu">
+    <li class="menu-item" onclick="toggleSubMenu(this)">
+      メニュー1
+      <ul class="sub-menu">
+        <li class="sub-menu-item">サブメニュー1-1</li>
+        <li class="sub-menu-item">サブメニュー1-2</li>
+        <li class="sub-menu-item">サブメニュー1-3</li>
+      </ul>
+    </li>
+
+    <li class="menu-item" onclick="toggleSubMenu(this)">
+      メニュー2
+      <ul class="sub-menu">
+        <li class="sub-menu-item">サブメニュー2-1</li>
+        <li class="sub-menu-item">サブメニュー2-2</li>
+        <li class="sub-menu-item">サブメニュー2-3</li>
+      </ul>
+    </li>
+
+    <li class="menu-item" onclick="toggleSubMenu(this)">
+      メニュー3
+      <ul class="sub-menu">
+        <li class="sub-menu-item">サブメニュー3-1</li>
+        <li class="sub-menu-item">サブメニュー3-2</li>
+        <li class="sub-menu-item">サブメニュー3-3</li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    function toggleSubMenu(menuItem) {
+      const subMenu = menuItem.querySelector('.sub-menu');
+      if (subMenu.style.display === 'block') {
+        subMenu.style.display = 'none';
+      } else {
+        subMenu.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

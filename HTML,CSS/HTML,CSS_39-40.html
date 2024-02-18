@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ツールチップ</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 100px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: #3498db;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .tooltip2 {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .tooltiptext2 {
+      visibility: hidden;
+      width: 200px;
+      background-color: #e74c3c;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip2:hover .tooltiptext2 {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .tooltip3 {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .tooltiptext3 {
+      visibility: hidden;
+      width: 200px;
+      background-color: #2ecc71;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip3:hover .tooltiptext3 {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tooltip">
+    関東
+    <div class="tooltiptext">
+        茨城県、栃木県、群馬県、埼玉県、千葉県、東京都、神奈川県
+    </div>
+  </div>
+
+  <div class="tooltip2">
+    北海道
+    <div class="tooltiptext2">
+      北海道
+    </div>
+  </div>
+
+  <div class="tooltip3">
+    九州
+    <div class="tooltiptext3">
+        福岡県、佐賀県、長崎県、熊本県、大分県、宮崎県、鹿児島県、沖縄県
+    </div>
+  </div>
+
+</body>
+</html>

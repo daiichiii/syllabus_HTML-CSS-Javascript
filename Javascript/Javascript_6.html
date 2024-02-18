@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>背景色変更</title>
+  <style>
+    body{
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+<script>
+  function getRandomColor(){
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (let i = 0; i<6; i++){
+      color += letters[Math.floor(Math.random()*16)];
+    }
+    return color;
+  }
+  document.body.addEventListener('dblclick',function(){
+    var randomColor=getRandomColor();
+    document.body.style.backgroundColor=randomColor;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ホバーエフェクトボタン</title>
+  <style>
+    /* 共通のボタンスタイル */
+    .hover-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid #3498db;
+      color: #3498db;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* ホバーエフェクト1 */
+    .hover-btn.effect1:hover {
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    /* ホバーエフェクト2 */
+    .hover-btn.effect2:hover {
+      transform: scale(1.1);
+      background-color: #2ecc71;
+      color: #fff;
+    }
+
+    .hover-btn.effect3:hover {
+        opacity: 0.5;
+    }
+
+  </style>
+</head>
+<body>
+
+  <a href="#" class="hover-btn effect1">ホバーエフェクト1</a>
+  <a href="#" class="hover-btn effect2">ホバーエフェクト2</a>
+  <a href="#" class="hover-btn effect3">ホバーエフェクト3</a>
+
+</body>
+</html>

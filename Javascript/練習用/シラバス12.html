@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="textlength">
+        <div id="text"></div>
+    </div>
+
+    <script>
+        const textlength = document.getElementById("textlength");
+        const text = document.getElementById("text");
+
+        textlength.addEventListener("input",function(){
+            text.textContent = "文字数" + textlength.value.length;
+        })
+    </script>
+</body>
+</html>

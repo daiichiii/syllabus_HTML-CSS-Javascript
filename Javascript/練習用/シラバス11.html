@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #customContextMenu{
+            display: none;
+            position: fixed;
+            background-color: #fff;
+            padding: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid red; /* 枠線を追加 */
+        }
+    </style>
+</head>
+<body>
+    <div id="customContextMenu">
+        <div onclick="handoleMenuclick('action1')">Action1</div>
+        <div onclick="handoleMenuclick('action2')">Action2</div>
+        <div onclick="handoleMenuclick('action3')">Action3</div>
+    </div>
+
+    <script>
+        const customContextMenu = document.getElementById("customContextMenu");
+        
+        document.addEventListener('contextmenu',function(){
+            // デフォルトの操作をキャンセルします
+            event.preventDefault();
+            customContextMenu.style.left = `${event.clientX}px`;
+            customContextMenu.style.top = `${event.clientY}px`;
+            customContextMenu.style.display = 'block';
+        });
+
+        document.addEventListener('click',function(){
+            customContextMenu.style.display = 'none';
+        });
+
+        function handoleMenuclick(action){
+            alert(`selected: ${action}`);
+            customContextMenu.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

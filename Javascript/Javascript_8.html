@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="key-display">押されたキーのコード: <span id="key-code"></span></div>
+
+<script>
+  // キーが押されたときに呼び出される関数
+  function handleKeyPress(event) {
+    // キーコードを表示する要素を取得
+    var keyCodeDisplay = document.getElementById('key-code');
+
+    // キーコードを表示
+    keyCodeDisplay.textContent = event.code;
+  }
+
+  // キーが押されたときのイベントリスナーを追加
+  document.addEventListener('keydown', handleKeyPress);
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>押されたキーのコード</title>
+</head>
+<body>
+  <div id="key-display">押されたキーのコード:<span id="key-code"></span></div>
+
+<script>
+  var keyCodeDisplay=document.getElementById('key-code');
+
+  document.addEventListener('keydown',function handleKeyPress(){
+    keyCodeDisplay.textContent=event.code;
+  });
+</script>
+</body>
+</html>

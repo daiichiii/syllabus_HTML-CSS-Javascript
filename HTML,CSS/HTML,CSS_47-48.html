@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュースレターサインアップ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #signup-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function signup() {
+            // メールアドレスの正規表現パターン
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            // 入力されたメールアドレスを取得
+            var emailInput = document.getElementById("email").value;
+
+            // 正規表現で形式を確認
+            if (emailPattern.test(emailInput)) {
+                // フォームの送信処理をここに追加する（例えば、サーバーへのデータ送信など）
+
+                // 送信後のメッセージを表示
+                document.getElementById("email-form").style.display = "none";
+                document.getElementById("thank-you-message").style.display = "block";
+            } else {
+                // メールアドレスの形式が正しくない場合の処理
+                alert("正しいメールアドレスの形式で入力してください。");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div id="signup-form">
+    <h2>ニュースレターサインアップ</h2>
+    <form id="email-form">
+        <label for="email">メールアドレス:</label>
+        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <button type="button" onclick="signup()">送信</button>
+    </form>
+    <p id="thank-you-message" style="display: none; color: green;">ありがとう！サインアップが完了しました。</p>
+</div>
+
+</body>
+</html>

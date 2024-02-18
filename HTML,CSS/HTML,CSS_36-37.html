@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カレンダー</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calendar {
+      width: 300px;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .calendar th, .calendar td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .today {
+      background-color: #3498db;
+      color: #fff;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>現在の月</h1>
+
+  <table class="calendar">
+    <thead>
+      <tr>
+        <th>日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+      </tr>
+    </thead>
+    <tbody id="calendar-body">
+      <!-- Calendar days will be dynamically inserted here using JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    // JavaScript to generate the calendar
+    document.addEventListener('DOMContentLoaded', function() {
+      const calendarBody = document.getElementById('calendar-body');
+      const today = new Date();
+      const currentMonth = today.getMonth();
+      const currentYear = today.getFullYear();
+
+      // Function to get the number of days in a month
+      function daysInMonth(month, year) {
+        return new Date(year, month + 1, 0).getDate();
+      }
+
+      // Function to create the calendar
+      function createCalendar(month, year) {
+        calendarBody.innerHTML = '';
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const totalDays = daysInMonth(month, year);
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+          const row = document.createElement('tr');
+          for (let j = 0; j < 7; j++) {
+            const cell = document.createElement('td');
+            if (i === 0 && j < firstDay) {
+              // Empty cells before the first day of the month
+              cell.textContent = '';
+            } else if (date > totalDays) {
+              // Empty cells after the last day of the month
+              cell.textContent = '';
+            } else {
+              cell.textContent = date;
+              if (date === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                // Highlight today's date
+                cell.classList.add('today');
+              }
+              date++;
+            }
+            row.appendChild(cell);
+          }
+          calendarBody.appendChild(row);
+        }
+      }
+
+      createCalendar(currentMonth, currentYear);
+    });
+  </script>
+
+</body>
+</html>

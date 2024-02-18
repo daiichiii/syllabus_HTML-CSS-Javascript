@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>押されたキーが表示されます：<span id="key-code"></span></div>
+<script>
+    var keycode = document.getElementById("key-code");
+
+    document.addEventListener('keydown',function(){
+        keycode.textContent = event.code;
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="input-text" oninput="countChars(this)"></textarea>
+    <div id="char-count"></div>
+
+<script>
+    function countChars(textarea){
+        var charCountElement = document.getElementById('char-count');
+        var charCount = textarea.value.length;
+        charCountElement.textContent = '文字数: '+charCount;
+    }
+</script>
+</body>
+</html>

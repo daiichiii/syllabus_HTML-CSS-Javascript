@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #overlay{
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            display: none;
+            background-color: slategray;
+            align-items: center;
+            justify-content: center;
+        }
+        #modal{
+            display: none;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <button id="openModal">モーダルを開く</button>
+
+    <div id="overlay">
+        <div id="modal">
+            <p>モーダルのコンテンツ</p>
+            <button id="closeModal">モーダルを閉じる</button>
+        </div>
+    </div>
+
+    <script>
+        const overlay = document.getElementById("overlay");
+        const modal = document.getElementById("modal");
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+
+        openModal.addEventListener("click",function(){
+            overlay.style.display = "flex";
+            modal.style.display = "flex";
+        });
+
+        closeModal.addEventListener("click",function(){
+            overlay.style.display = "none";
+            modal.style.display = "none";
+        })
+        overlay.addEventListener("click",function(){
+            if(event.target === overlay){
+                overlay.style.display = "none";
+                modal.style.display = "none";
+            };
+        })
+
+    </script>
+</body>
+</html>

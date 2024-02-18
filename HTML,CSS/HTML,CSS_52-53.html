@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パンくずリスト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #breadcrumbs {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        #breadcrumbs li {
+            display: inline;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        #breadcrumbs li:hover {
+            color: blue; /* ホバー時の色 */
+        }
+    </style>
+</head>
+<body>
+    <ul id="breadcrumbs">
+        <li class="crumb" onclick="changeColor(this)">ホーム</li>
+        <li class="separator">&gt;</li>
+        <li class="crumb" onclick="changeColor(this)">カテゴリ1</li>
+        <li class="separator">&gt;</li>
+        <li class="crumb" onclick="changeColor(this)">サブカテゴリ1-1</li>
+        <li class="separator">&gt;</li>
+        <li class="crumb" onclick="changeColor(this)">現在のページ</li>
+    </ul>
+
+    <script>
+        function changeColor(element) {
+            // すべてのクラムについて色を元に戻す
+            var breadcrumbs = document.querySelectorAll('.crumb');
+            breadcrumbs.forEach(function(crumb) {
+                crumb.style.color = ''; // 色をクリア
+            });
+
+            // クリックしたクラムの色を変更
+            element.style.color = 'red'; // クリックしたページの色
+
+            // ここに選択されたページに対する追加の処理を追加できます
+            // 例えば、ページに応じたコンテンツの表示など
+        }
+    </script>
+</body>
+</html>

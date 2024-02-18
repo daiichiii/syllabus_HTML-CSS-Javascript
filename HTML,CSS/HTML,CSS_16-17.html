@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タブメニュー</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 15px;
+      background-color: #ddd;
+      cursor: pointer;
+      margin-right: 5px;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .tab:hover {
+      background-color: #ccc;
+    }
+
+    .content {
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 0 0 5px 5px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab" onclick="showContent(0)">タブ1</div>
+    <div class="tab" onclick="showContent(1)">タブ2</div>
+    <div class="tab" onclick="showContent(2)">タブ3</div>
+  </div>
+
+  <div id="content1" class="content">
+    <h2>猫の写真1枚目</h2>
+    <img src="https://placekitten.com/800/400" alt="Slide 1">
+    <p>雪の中にいるの猫の写真</p>
+  </div>
+
+  <div id="content2" class="content hidden">
+    <h2>猫の写真2枚目</h2>
+    <img src="https://placekitten.com/801/400" alt="Slide 2">
+    <p>4匹の猫の写真</p>
+  </div>
+
+  <div id="content3" class="content hidden">
+    <h2>猫の写真3枚目</h2>
+    <img src="https://placekitten.com/802/400" alt="Slide 3">
+    <p>度アップの猫の写真</p>
+  </div>
+
+  <script>
+    function showContent(tabIndex) {
+      // すべてのコンテンツを非表示にする
+      const contents = document.querySelectorAll('.content');
+      contents.forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      // クリックされたタブに対応するコンテンツを表示する
+      const selectedContent = document.getElementById(`content${tabIndex + 1}`);
+      selectedContent.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

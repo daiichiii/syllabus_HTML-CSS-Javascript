@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #drop-and-down {
+            width: 500px;
+            height: 100px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+
+            position: absolute;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+    <div id="drop-and-down" draggable="true">ドラッグ＆ドロップ</div>
+
+    <script>
+        const dropAndDown = document.getElementById("drop-and-down")
+        let offsetX, offsetY, isDragging = false;
+
+        dropAndDown.addEventListener("mousedown",function(event){
+            isDragging = true;
+            offsetX = event.clientX - dropAndDown.getBoundingClientRect().left;
+            offsetY = event.clientY - dropAndDown.getBoundingClientRect().top;
+            dropAndDown.style.cursor = "grabbing";
+        });
+
+        document.addEventListener("mousemove",function(event){
+            if(isDragging){
+                const x = event.clientX - offsetX;
+                const y = event.clientY - offsetY;
+
+                dropAndDown.style.left = x + "px";
+                dropAndDown.style.top = y + "px";
+            }
+        });
+
+        document.addEventListener("mouseup",function(){
+            isDragging = false;
+            dropAndDown.style.cursor = "grab";
+        });
+    </script>
+</body>
+</html>

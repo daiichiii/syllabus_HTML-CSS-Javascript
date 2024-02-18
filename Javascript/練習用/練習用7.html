@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="size-display">ウィンドウのサイズ<span id="size-info"></span></div>
+
+<script>
+
+    // サイズの変更を取得して文字おこしする
+    function updatesizedisplay(){
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+
+        var sizeInfo = document.getElementById('size-info');
+
+        sizeInfo.textContent = width+'x' + height + 'ピクセル';
+    }
+    // サイズが変更されるたびに関数を呼び出すようにする
+    window.addEventListener('resize',updatesizedisplay);
+    // 初期化するもの
+    updatesizedisplay();
+</script>
+</body>
+</html>

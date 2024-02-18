@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プログレスバー</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .progress-bar-container {
+      width: 300px;
+      margin-top: 20px;
+    }
+
+    .progress-bar {
+      height: 30px;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0;
+      background-color: #3498db;
+      transition: width 1s ease-in-out;
+    }
+
+    .skill-label {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>スキルのプログレス</h1>
+
+  <div class="progress-bar-container">
+    <div class="skill-label">スキル1 (70%)</div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 70%;"></div>
+    </div>
+
+    <div class="skill-label">スキル2 (80%)</div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 80%;"></div>
+    </div>
+
+    <div class="skill-label">スキル3 (90%)</div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 90%;"></div>
+    </div>
+
+    <div class="skill-label">スキル4 (95%)</div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 95%;"></div>
+    </div>
+
+    <div class="skill-label">スキル5 (100%)</div>
+    <div class="progress-bar">
+      <div class="progress" style="width: 100%;"></div>
+    </div>
+  </div>
+
+</body>
+</html>

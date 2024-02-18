@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アコーディオンメニュー</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .accordion {
+      width: 300px;
+    }
+
+    .section {
+      margin-bottom: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #ddd;
+    }
+
+    .section-content {
+      display: none;
+      padding: 10px;
+    }
+
+    .section.active .section-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="accordion">
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">たんぱく質</div>
+    <div class="section-content">
+      <p>アミノ酸がつながったもの、骨や、筋肉、臓器をつくる（4kcal/g）</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">脂質</div>
+    <div class="section-content">
+      <p>神経組織、細胞膜、ホルモンなどをつくる（９kcal/g）。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header" onclick="toggleSection(this)">炭水化物(糖質)</div>
+    <div class="section-content">
+      <p>糖がつながったもので、消化吸収されてすぐに脳や身体のエネルギーとなる（4kcal/）
+    </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleSection(header) {
+    const section = header.parentElement;
+    section.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #additional-content{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <label>
+        <input type="checkbox" id="check-box" onchange="check_to_box()">contents indicate</input>
+    </label>
+
+    <div id="additional-content">
+        <img src="ANT-MAN.jpg" alt="ANT-MAN">
+    </div>
+
+    <script>
+        const additionalContent = document.getElementById("additional-content");
+        const checkBox = document.getElementById("check-box");
+
+        function check_to_box(){
+            if(checkBox.checked){
+                additionalContent.style.display = "block";
+            }else{
+                additionalContent.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>

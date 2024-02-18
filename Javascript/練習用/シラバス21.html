@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img{
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+        .zoomed{
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <img src="https://placekitten.com/400/300" alt="cat1">
+    <img src="https://placekitten.com/500/400" alt="cat2">
+    <img src="https://placekitten.com/600/500" alt="cat3">
+
+    <script>
+        const images = document.querySelectorAll("img");
+
+        images.forEach(function(image){
+            image.addEventListener("click",function(){
+                image.classList.toggle("zoomed");
+            })
+        })
+        
+    </script>
+</body>
+</html>

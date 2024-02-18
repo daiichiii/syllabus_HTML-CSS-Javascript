@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>任意のキーを押してください</h1>
+    <script>
+
+        window.addEventListener("keydown",function(event){
+            const pressedKey = event.key
+            switch(pressedKey){
+                case "b":
+                    document.body.style.backgroundColor = "blue";
+                    break;
+                case "y":
+                    document.body.style.backgroundColor = "yellow";
+                    break;
+                case "r":
+                    document.body.style.backgroundColor = "red";
+                    break;
+                default:
+                break
+            };
+        })
+    </script>
+</body>
+</html>

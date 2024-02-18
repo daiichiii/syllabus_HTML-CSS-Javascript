@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* gap: 10px; */
+        }
+        .tabs{
+            display: flex;
+            margin-bottom: 80px;
+            gap: 10px;
+        }
+        .tab {
+            
+            background-color: #ddd;
+            cursor: pointer;
+
+            border-radius: 5px 5px 0 0;
+        }
+        .tab:hover{
+            background-color: aqua;
+        }
+        .content {
+            padding: 20px;
+            display: hidden;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab" onclick="showContent(0)">タブ1</div>
+        <div class="tab" onclick="showContent(1)">タブ2</div>
+        <div class="tab" onclick="showContent(2)">タブ3</div>
+    </div>
+
+    <div>
+        <div id="content1" class="content">
+            <img src="https://placekitten.com/800/400" alt="Slide 1">
+            <div>1爪の</div>
+            </div>
+        </div>
+        <div id="content2" class="content hidden">
+            <img src="https://placekitten.com/800/400" alt="Slide 2">
+            <div>2爪</div>
+        </div>
+        <div id="content3" class="content hidden">
+            <img src="https://placekitten.com/800/400" alt="Slide 3">
+            <div>3爪</div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(tabIndex){
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(function(content){
+                content.classList.add('hidden');
+            });
+            const selectedContent = document.getElementById('content' + (tabIndex + 1));
+            selectedContent.classList.remove('hidden');
+        }
+
+    </script>
+</body>
+</html>

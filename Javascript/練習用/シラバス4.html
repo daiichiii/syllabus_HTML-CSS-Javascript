@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="dropdown">
+        <option value="select">選択肢1</option>
+        <option value="select">選択肢2</option>
+        <option value="select">選択肢3</option>
+    </select>
+    <p id="placeholder">ここに選択肢が表示されます</p>
+
+    <script>
+        const dropdown = document.getElementById("dropdown");
+        const placeholder = document.getElementById("placeholder");
+
+        dropdown.addEventListener("change",function(){
+            placeholder.textContent = dropdown.options[dropdown.selectedIndex].text;
+        })
+    </script>
+</body>
+</html>

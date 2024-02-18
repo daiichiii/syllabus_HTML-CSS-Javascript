@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let inactivityTimeout;
+
+        window.addEventListener("mousemove",activeuser);
+        window.addEventListener("keydowwn",activeuser);
+
+        function activeuser(){
+            clearTimeout(inactivityTimeout);
+
+            inactivityTimeout = setTimeout(showAlert, 100);
+        }
+
+        function showAlert(){
+            alert('まだいますか？');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サイズの表示変更</title>
+</head>
+<body>
+  <div id="size-display">ウィンドウのサイズ:<span id="size-info"></span></div>
+
+<script>
+  function updateSizeDisplay(){
+    var width=window.innerWidth;
+    var height=window.innerHeight;
+
+    var sizeInfo=document.getElementById('size-info');
+
+    sizeInfo.textContent=width+'x'+height+'ピクセル';
+  }
+  window.addEventListener('resize',updateSizeDisplay);
+
+  updateSizeDisplay();
+</script>
+</body>
+</html>

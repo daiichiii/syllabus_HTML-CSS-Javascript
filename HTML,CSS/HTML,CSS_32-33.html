@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイムライン</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .timeline-container {
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .timeline-event {
+      position: relative;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+
+    .event-date {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .event-description {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="timeline-container">
+    <div class="timeline-event">
+      <div class="event-date">2023年1月1日</div>
+      <div class="event-description">元日、初詣</div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="event-date">2023年3月15日</div>
+      <div class="event-description">ホワイトデー翌日</div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="event-date">2023年6月30日</div>
+      <div class="event-description">誰かの誕生日</div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="event-date">2023年10月6日</div>
+      <div class="event-description">MY birthday</div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="event-date">2023年12月25日</div>
+      <div class="event-description">クリスマス</div>
+    </div>
+  </div>
+
+</body>
+</html>

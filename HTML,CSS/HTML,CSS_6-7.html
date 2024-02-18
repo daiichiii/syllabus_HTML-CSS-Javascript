@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>季節ごとのカウントダウン</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      position: relative; /* 追加 */
+    }
+
+    #countdown-container {
+      background-color: rgba(0, 0, 0, 0.5); /* 透明度を下げる */
+      padding: 20px;
+      border-radius: 10px;
+      position: absolute;
+      z-index: 1;
+    }
+
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #countdown {
+      font-size: 3em;
+      margin-top: 20px;
+      color: #fff; /* カウントの文字色を明示的に指定 */
+      font-weight: bold; /* カウントの文字を太字にする */
+    }
+
+  </style>
+</head>
+<body>
+  <div id="countdown-container">
+    <h1>クリスマスまでの残り日数</h1>
+    <div id="countdown"></div>
+  </div>
+
+  <script>
+    // クリスマスまでの日付を設定（月は0から始まるため11は実際の12月を表します）
+    const christmasDate = new Date(new Date().getFullYear(), 11, 25).getTime();
+
+    function updateCountdown() {
+      // 現在の日付とクリスマスまでの残り時間を計算
+      const now = new Date().getTime();
+      const timeRemaining = christmasDate - now;
+
+      // 日数、時間、分、秒に変換
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+      // カウントダウン表示を更新
+      document.getElementById('countdown').innerHTML = `${days}日 ${hours}時間 ${minutes}分 ${seconds}秒`;
+    }
+
+    // カウントダウンの更新を1秒ごとに繰り返す
+    setInterval(updateCountdown, 1000);
+
+    // 季節に合わせた背景画像の設定
+    const currentMonth = new Date().getMonth();
+    const body = document.body;
+
+    if (currentMonth === 11) {
+      // 12月の場合（クリスマスシーズン）
+      body.style.backgroundImage = 'url("https://cdn.pixabay.com/photo/2016/11/29/13/37/christmas-1869902_640.jpg")';
+    } else if (currentMonth >= 2 && currentMonth <= 4) {
+      // 3月から5月の場合（春）
+      body.style.backgroundImage = 'url("https://media.istockphoto.com/id/1263770659/ja/%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%E3%83%95%E3%82%A9%E3%83%88/%E6%BA%80%E9%96%8B%E3%81%AE%E6%A1%9C%E3%81%A8%E8%8F%9C%E3%81%AE%E8%8A%B1%E5%AE%AE%E5%B4%8E%E7%9C%8C%E8%AA%A0%E5%B8%82%E3%81%AE%E9%87%8C%E5%8E%9F%E3%81%AE%E5%A2%B3%E5%A1%9A.jpg?s=612x612&w=0&k=20&c=0krzxNk-hlgWuOiVQRcKMU7s0na_1jJ0-gsc18vZoVo=")';
+    } else if (currentMonth >= 5 && currentMonth <= 7) {
+      // 6月から8月の場合（夏）
+      body.style.backgroundImage = 'url("https://cdn.pixabay.com/photo/2017/06/17/18/35/beach-2413081_640.jpg")';
+    } else if (currentMonth >= 8 && currentMonth <= 10) {
+      // 9月から11月の場合（秋）
+      body.style.backgroundImage = 'url("https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_640.jpg")';
+    } else {
+      // それ以外の場合（冬）
+      body.style.backgroundImage = 'url("https://cdn.pixabay.com/photo/2018/10/19/12/14/train-3758523_640.jpg")';
+    }
+  </script>
+</body>
+</html>

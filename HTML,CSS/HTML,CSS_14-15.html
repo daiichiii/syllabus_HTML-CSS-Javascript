@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>写真スライダー</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    #slider-container {
+      width: 80%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: #000000;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="slider-container">
+    <div id="slider">
+      <div class="slide">
+        <img src="https://placekitten.com/800/400" alt="Slide 1">
+        <div class="caption">1枚目の写真</div>
+      </div>
+      <div class="slide">
+        <img src="https://placekitten.com/801/400" alt="Slide 2">
+        <div class="caption">2枚目の写真</div>
+      </div>
+      <div class="slide">
+        <img src="https://placekitten.com/802/400" alt="Slide 3">
+        <div class="caption">3枚目の写真</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      const newTransformValue = -index * 100 + '%';
+      slider.style.transform = 'translateX(' + newTransformValue + ')';
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % 3;
+      showSlide(currentIndex);
+    }
+
+    showSlide(currentIndex);
+
+    // イベントリスナーを追加
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('slider-container').addEventListener('click', nextSlide);
+    });
+  </script>
+</body>
+</html>

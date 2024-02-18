@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくある質問</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .faq-container {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .question {
+      background-color: #fff;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .answer {
+      display: none;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="faq-container">
+    <div class="question" onclick="toggleAnswer(1)">
+      <strong>Q1: これはサンプルの質問ですか？</strong>
+      <div class="answer" id="answer1">A1: はい、これはサンプルの質問です。</div>
+    </div>
+
+    <div class="question" onclick="toggleAnswer(2)">
+      <strong>Q2: どのようにして質問を追加できますか？</strong>
+      <div class="answer" id="answer2">A2: 質問を追加するには、HTMLコードに新しい質問のセクションを追加します。</div>
+    </div>
+
+    <div class="question" onclick="toggleAnswer(3)">
+      <strong>Q3: 回答のスタイルを変更できますか？</strong>
+      <div class="answer" id="answer3">A3: はい、CSSを使用して回答のスタイルを変更できます。</div>
+    </div>
+
+    <div class="question" onclick="toggleAnswer(4)">
+      <strong>Q4: JavaScriptを使用していますか？</strong>
+      <div class="answer" id="answer4">A4: はい、JavaScriptを使用して回答を開閉しています。</div>
+    </div>
+
+    <div class="question" onclick="toggleAnswer(5)">
+      <strong>Q5: このFAQセクションを利用するためには何が必要ですか？</strong>
+      <div class="answer" id="answer5">A5: このFAQセクションを利用するには、HTML、CSS、JavaScriptが必要です。</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer(questionNumber) {
+      const answer = document.getElementById(`answer${questionNumber}`);
+      answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

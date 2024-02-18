@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>サイドナビゲーションバー</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #a9a9a9;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #ffffff;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      color: #fff;
+      background-color: #575757;
+    }
+
+    /* 現在のページを示す項目のスタイル */
+    .sidebar a.active {
+      color: white;
+      background-color: #111;
+    }
+
+    .content {
+      margin-left: 260px;
+      padding: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a href="#home" onclick="changePage('home')">ホーム</a>
+  <a href="#news" onclick="changePage('news')">近況</a>
+  <a href="#contact" onclick="changePage('contact')">お問い合わせ</a>
+  <a href="#about" onclick="changePage('about')">会社情報</a>
+  <a href="#services" onclick="changePage('services')">サービス</a>
+</div>
+
+<div class="content">
+  <h2 id="currentPageTitle">現在のページ: ホーム</h2>
+  <p id="currentPageContent">ここにはページのコンテンツが入ります。</p>
+</div>
+
+<script>
+  function changePage(page) {
+    // ハイライトの処理
+    var links = document.querySelectorAll('.sidebar a');
+    links.forEach(function(link) {
+      link.classList.remove('active');
+    });
+
+    var selectedLink = document.querySelector('.sidebar a[href="#' + page + '"]');
+    selectedLink.classList.add('active');
+
+    // ページの内容を変更する処理
+    var pageTitle = document.getElementById('currentPageTitle');
+    var pageContent = document.getElementById('currentPageContent');
+
+    pageTitle.textContent = '現在のページ: ' + selectedLink.textContent;
+
+    // ここで各ページごとのコンテンツを設定する
+    switch (page) {
+      case 'home':
+        pageContent.textContent = 'ホームページのコンテンツがここに入ります。';
+        break;
+      case 'news':
+        pageContent.textContent = 'ニュースページのコンテンツがここに入ります。';
+        break;
+      case 'contact':
+        pageContent.textContent = 'お問い合わせページのコンテンツがここに入ります。';
+        break;
+      case 'about':
+        pageContent.textContent = '私たちについてページのコンテンツがここに入ります。';
+        break;
+      case 'services':
+        pageContent.textContent = 'サービスページのコンテンツがここに入ります。';
+        break;
+    }
+  }
+</script>
+
+</body>
+</html>

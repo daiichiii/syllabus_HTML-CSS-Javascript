@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+    }
+
+    #target-element {
+      width: 200px;
+      height: 200px;
+      background-color: #3498db;
+      transition: opacity 0.5s ease; /* フェードアウトのアニメーション設定 */
+    }
+  </style>
+</head>
+<body>
+
+<div id="target-element" onmouseleave="fadeOutElement()"></div>
+
+<script>
+  // 要素をフェードアウトする関数
+  function fadeOutElement() {
+    var targetElement = document.getElementById('target-element');
+    targetElement.style.opacity = 0; // 要素の透明度を0に設定
+  }
+</script>
+
+</body>
+</html>
